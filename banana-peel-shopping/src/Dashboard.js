@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { MdOutlineClose } from "react-icons/md";
 
-// import Cart from './Cart';
+// import Cart from './Cart';banana-peel-shopping/src/Dashboard.js
 
 const allTypes = ["ALL", ...new Set(flops.map((flop) => flop.type))];
 
@@ -62,7 +62,15 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <section className="banner-container"><img className="banner" src={banner} alt="banner"></img></section>
+      <section className="banner-container">
+        <img className="banner" src={banner} alt="banner">
+        <a href='#prod-container'>
+        <button className="cart cart-btn" data-testid="cart-btn">
+            Shop Now!
+          </button>
+        </a>
+          </img>
+          </section>
 
       {showItemDetail && (
         <ItemModal
@@ -81,7 +89,7 @@ const Dashboard = () => {
         <Cart cartItems={cartItems} setCartItems={setCartItems}/>
       } */}
 
-      <section data-testid="products-container" className="products-container">
+      <section data-testid="products-container" id='prod-container' className="products-container">
         <Products
           flopItems={flopItems}
           setCurrID={setCurrID}
